@@ -3,15 +3,15 @@
 	<table>
 		<tr>
 			<td>
-				<a id="search">PDF</a>
+				<a id="search">{PDF}</a>
 			</td>			
 			<td>
-				<a id="search">CSV</a>
+				<a id="search">{CSV}</a>
 			</td>
 		</tr>
 		<tr>			
-			<td>
-				<a id="search">Remun report</a>
+			<td colspan="2">
+				<a id="search">{REMUN REPORT}</a>
 			</td>
 		</tr>
 	</table>

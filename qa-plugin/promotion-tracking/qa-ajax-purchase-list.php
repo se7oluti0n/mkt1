@@ -33,7 +33,21 @@ function init_paging(){
 																	3 => 'Method 3'))
 										);	
 	
-	$promotion_list_html = '<tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr><tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr><tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr>'; // create HTML code for promotion list here
+	$promotion_list_html = '<tr>
+								<td width="20px">NO</td>
+								<td width="400px">PRODUCT_NAME</td>
+								<td width="100px">PRODUCT_EC_ID</td>
+							</tr>
+							<tr>
+								<td width="20px">NO</td>
+								<td width="400px">PRODUCT_NAME</td>
+								<td width="100px">PRODUCT_EC_ID</td>
+							</tr>
+							<tr>
+								<td width="20px">NO</td>
+								<td width="400px">PRODUCT_NAME</td>
+								<td width="100px">PRODUCT_EC_ID</td>
+							</tr>'; // create HTML code for promotion list here
 	
 	// then replace to replacing holder 
 	$analytics_template->set_data('purchase-list', '{PROMOTION_LIST_VAL}', $promotion_list_html);
