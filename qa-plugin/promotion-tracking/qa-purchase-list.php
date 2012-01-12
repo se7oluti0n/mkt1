@@ -32,6 +32,7 @@ class qa_purchase_list {
 	public function process_request($request){
 		$qa_content=qa_content_prepare();
 		$qa_content["script_rel"][] = 'qa-plugin/promotion-tracking/js/expand_qa_main.js';
+		$qa_content["script_rel"][] = 'qa-plugin/promotion-tracking/js/qa-purchase-list.js';
 		
 		$qa_content["custom"] = '<p>Welcome to tracking purchase list</p>';
 		
