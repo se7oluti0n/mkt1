@@ -3,28 +3,14 @@
 	<table>
 		<tr>
 			<td>
-				<a id="search">{PDF}</a>
-			</td>			
-			<td>
-				<a id="search">{CSV}</a>
+				<a id = "pdf">{PDF}</a>
 			</td>
-		</tr>
-		<tr>			
-			<td colspan="2">
-				<a id="search">{REMUN REPORT}</a>
+			<td>
+				<a id = "csv">{CSV}</a>
 			</td>
-		</tr>
-	</table>
-	</div><br/>
-	<div class="qa-form-function-item qa-lfloat">
-	<table>
-		<tr>
 			<td>
-				<label id="status_lbl" for="status">{STATUS}</label>
-			</td>			
-			<td>
-				<select id="status">
-					{STATUS_VAL}
+				<select id="seaching_time">
+					{SEARCHING_TIME}
 				</select>
 			</td>
 			<td>
@@ -34,38 +20,50 @@
 				<input type="text" id="start_date">
 			</td>
 			<td>
-				<label id="keyword_lbl" for="keyword">{KEYWORD}</label>
+				<label id="year_lbl" for="year">{YEAR}</label>
 			</td>
 			<td>
-				<input type="text" id="keyword" size="20">
+				<select id = "year">
+					{YEAR_VAL}
+				</select>
+			</td>
+			<td>
+				<label id="uid_lbl" for="uid">{UID}</label>
+			</td>
+			<td>
+				<input type="text" id="uid"> 
+			</td>
+			<td>
+				<a id="view">{VIEW}</a>
 			</td>
 		</tr>
 		<tr>			
-			<td>
-				<label id="sale_method_lbl" for="sale_method">{SALE_METHOD}</label>
+			<td colspan="2">
+				<a id="report">{REMUN_REPORT}</a>
 			</td>
-			<td>				
-				<select id="sale_method">
-					{SALE_METHOD_VAL}
-				</select>
-			</td>
+			<td> &nbsp; </td>
 			<td>
 				<label id="end_date_lbl" for="end_date">{END_DATE}</label>
 			</td>
 			<td>
 				<input type="text" id="end_date">
 			</td>
-			<td>				
-				<label id="ranking_lbl" for="ranking">{RANKING}</label>
+			<td>
+				<label id="month_lbl" for="month">{MONTH}</label>
 			</td>
-			<td>									
-				<input type="checkbox" id="ranking">
+			<td>
+				<select id = "month">
+					{MONTH_VAL}
+				</select>
+			</td>
+			<td>
+				<label id="pid_lbl" for="pid">{PID}</label>
+			</td>
+			<td>
+				<input type="text" id="pid"> 
 			</td>
 		</tr>		
 	</table>
-	</div><br/>
-	<div class="qa-form-function-item qa-rfloat">
-		<a id="search">{SEARCH}</a>		
 	</div>
 </div>
 

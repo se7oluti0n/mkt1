@@ -20,18 +20,19 @@ function init_paging(){
 	// Get template for the page
 	$analytics_template = template_factory::create('purchase/purchase-list');
 	
-	$analytics_template->set_data('purchase-list', '{STATUS_VAL}', 
-										array( 'selected' => 1,
-												'options' => array( 1 => 'Status 1', 
-																	2 => 'Status 2', 
-																	3 => 'Status 3'))
+	$analytics_template->set_data('purchase-list', '{SEARCHING_TIME}', 
+										array( 'selected' => 0,
+												'options' => array( 1 => 'Buy Time', 
+																	2 => 'Click Time'))
 										);	
-	$analytics_template->set_data('purchase-list', '{SALE_METHOD_VAL}', 
-										array( 'selected' => 1,
-												'options' => array( 1 => 'Method 1', 
-																	2 => 'Method 2', 
-																	3 => 'Method 3'))
-										);	
+	$analytics_template->set_data('purchase-list', '{YEAR_VAL}', 
+										array( 'selected' => 0,
+												'options' => array(2012, 2013, 2014))
+										);
+	$analytics_template->set_data('purchase-list', '{MONTH_VAL}',
+										array( 'selected' => 0,
+												'options' => array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
+										);
 	
 	$promotion_list_html = '<tr>
 								<td width="20px">NO</td>
@@ -52,13 +53,16 @@ function init_paging(){
 	// then replace to replacing holder 
 	$analytics_template->set_data('purchase-list', '{PROMOTION_LIST_VAL}', $promotion_list_html);
 	
-	$analytics_template->set_data('purchase-list', '{STATUS}', 'STATUS');
-	$analytics_template->set_data('purchase-list', '{START_DATE}', 'START DATE');
-	$analytics_template->set_data('purchase-list', '{END_DATE}', 'END DATE');
-	$analytics_template->set_data('purchase-list', '{KEYWORD}', 'KEYWORD');
-	$analytics_template->set_data('purchase-list', '{SALE_METHOD}', 'SALE METHOD');
-	$analytics_template->set_data('purchase-list', '{RANKING}', 'RANKING');
-	$analytics_template->set_data('purchase-list', '{SEARCH}', 'SEARCH');
+	$analytics_template->set_data('purchase-list', '{PDF}', 'PDF');
+	$analytics_template->set_data('purchase-list', '{CSV}', 'CSV');
+	$analytics_template->set_data('purchase-list', '{REMUN_REPORT}', 'Remun report');
+	$analytics_template->set_data('purchase-list', '{START_DATE}', 'From');
+	$analytics_template->set_data('purchase-list', '{END_DATE}', 'To');
+	$analytics_template->set_data('purchase-list', '{YEAR}', 'Year');
+	$analytics_template->set_data('purchase-list', '{MONTH}', 'Month');
+	$analytics_template->set_data('purchase-list', '{UID}', 'UID');
+	$analytics_template->set_data('purchase-list', '{PID}', 'PID');
+	$analytics_template->set_data('purchase-list', '{VIEW}', 'VIEW');
 		
 	$analytics_template->set_data('purchase-list', '{SAVE_CHANGE_BTN}', 'SAVE CHANGE');	
 	
