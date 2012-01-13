@@ -9,19 +9,19 @@ $function_array = array(
 
 if (!do_tracking_request_process()) {
 	echo '{"ret": "NG"}';
-} 
+}
 
 /*-- Bussiness functions (public use) --*/
 function init_paging(){
 	global $qa_db;
 	$args = func_get_args();
-	
-	$sample_param = $args[0]['sample_param']; // just show how to get parame 
-	
+
+	$sample_param = $args[0]['sample_param']; // just show how to get parame
+
 	// Get template for the page
 	$setting_template = template_factory::create('config/tracking-setting');
-	
-	
+
+
 	$setting_template->set_data('tracking-setting', '{COMPANY_INFO}', 'Company info');
 	$setting_template->set_data('tracking-setting', '{COMPANY_NAME}', 'Company name');
 	$setting_template->set_data('tracking-setting', '{DEPARTMENT}', 'Department');
@@ -44,16 +44,16 @@ function init_paging(){
 	$setting_template->set_data('tracking-setting', '{COOKIE_30DAYS}', 'Cookie 30 days');
 	$setting_template->set_data('tracking-setting', '{RETURNING_TIME}', 'Returning time');
 	$setting_template->set_data('tracking-setting', '{SAVE}', 'Save');
-	$setting_template->set_data('tracking-setting', '{CITY_PREF_VAL}', 
-										array( 'selected' => 1,
-												'options' =>  array('“s“¹•{Œ§‚ð‘I‘ð','–kŠC“¹','ÂXŒ§','ŠâŽèŒ§','‹{éŒ§','H“cŒ§','ŽRŒ`Œ§','•Ÿ“‡Œ§','ˆïéŒ§','“È–ØŒ§','ŒQ”nŒ§','é‹ÊŒ§','ç—tŒ§','“Œ‹ž“s','_“ÞìŒ§','ŽR—œŒ§','’·–ìŒ§','VŠƒŒ§','•xŽRŒ§','ÎìŒ§','•ŸˆäŒ§','Šò•ŒŒ§','Ã‰ªŒ§','ˆ¤’mŒ§','ŽOdŒ§','Ž ‰êŒ§','‹ž“s•{','‘åã•{','•ºŒÉŒ§','“Þ—ÇŒ§','˜a‰ÌŽRŒ§','’¹ŽæŒ§','“‡ªŒ§','‰ªŽRŒ§','L“‡Œ§','ŽRŒûŒ§','“¿“‡Œ§','ìŒ§','ˆ¤•QŒ§','‚’mŒ§','•Ÿ‰ªŒ§','²‰êŒ§','’·èŒ§','ŒF–{Œ§','‘å•ªŒ§','‹{èŒ§','Ž­Ž™“‡Œ§','‰«“êŒ§'))
-										);		
-	
-	$promotion_list_html = '<tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr><tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr><tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr>'; // create HTML code for promotion list here
-	
-	// then replace to replacing holder 
-//	$setting_template->set_data('tracking-setting', '{PROMOTION_LIST_VAL}', $promotion_list_html);
-	
+	$setting_template->set_data('tracking-setting', '{CITY_PREF_VAL}',
+	array( 'selected' => 1,
+												'options' =>  array('éƒ½é“åºœçœŒã‚’é¸æŠž','åŒ—æµ·é“','é’æ£®çœŒ','å²©æ‰‹çœŒ','å®®åŸŽçœŒ','ç§‹ç”°çœŒ','å±±å½¢çœŒ','ç¦å³¶çœŒ','èŒ¨åŸŽçœŒ','æ ƒæœ¨çœŒ','ç¾¤é¦¬çœŒ','åŸ¼çŽ‰çœŒ','åƒè‘‰çœŒ','æ±äº¬éƒ½','ç¥žå¥ˆå·çœŒ','å±±æ¢¨çœŒ','é•·é‡ŽçœŒ','æ–°æ½ŸçœŒ','å¯Œå±±çœŒ','çŸ³å·çœŒ','ç¦äº•çœŒ','å²é˜œçœŒ','é™å²¡çœŒ','æ„›çŸ¥çœŒ','ä¸‰é‡çœŒ','æ»‹è³€çœŒ','äº¬éƒ½åºœ','å¤§é˜ªåºœ','å…µåº«çœŒ','å¥ˆè‰¯çœŒ','å’Œæ­Œå±±çœŒ','é³¥å–çœŒ','å³¶æ ¹çœŒ','å²¡å±±çœŒ','åºƒå³¶çœŒ','å±±å£çœŒ','å¾³å³¶çœŒ','é¦™å·çœŒ','æ„›åª›çœŒ','é«˜çŸ¥çœŒ','ç¦å²¡çœŒ','ä½è³€çœŒ','é•·å´ŽçœŒ','ç†Šæœ¬çœŒ','å¤§åˆ†çœŒ','å®®å´ŽçœŒ','é¹¿å…å³¶çœŒ','æ²–ç¸„çœŒ'))
+	);
+
+	/*$promotion_list_html = '<tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr><tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr><tr><td width="20px">NO</td><td width="400px">PRODUCT_NAME</td><td width="100px">PRODUCT_EC_ID</td></tr>'; // create HTML code for promotion list here
+
+	// then replace to replacing holder
+	//	$setting_template->set_data('tracking-setting', '{PROMOTION_LIST_VAL}', $promotion_list_html);
+
 	//$setting_template->set_data('tracking-setting', '{STATUS}', 'STATUS');
 	$setting_template->set_data('tracking-setting', '{START_DATE}', 'START DATE');
 	$setting_template->set_data('tracking-setting', '{END_DATE}', 'END DATE');
@@ -61,10 +61,10 @@ function init_paging(){
 	$setting_template->set_data('tracking-setting', '{SALE_METHOD}', 'SALE METHOD');
 	$setting_template->set_data('tracking-setting', '{RANKING}', 'RANKING');
 	$setting_template->set_data('tracking-setting', '{SEARCH}', 'SEARCH');
-		
-	$setting_template->set_data('tracking-setting', '{SAVE_CHANGE_BTN}', 'SAVE CHANGE');	
-	
-	$html = $setting_template->get_html();	
+
+	$setting_template->set_data('tracking-setting', '{SAVE_CHANGE_BTN}', 'SAVE CHANGE');
+	*/
+	$html = $setting_template->get_html();
 	echo $html; // return HTML code for setting page
 }
 
@@ -76,5 +76,5 @@ function init_paging(){
 /*-- /Private functions (local use) --*/
 
 /*
-	Omit PHP closing tag to help avoid accidental output
+ Omit PHP closing tag to help avoid accidental output
 */

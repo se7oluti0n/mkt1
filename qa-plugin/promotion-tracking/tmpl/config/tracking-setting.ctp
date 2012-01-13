@@ -1,3 +1,8 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="tracking-setting.css" />
+</head>
 <div class="qa-form-company-info" id="company_info"
 	style="height: 60px;">
 	<div class="qa-form-company-info qa-lfloat">
@@ -182,3 +187,4 @@
 		<a id="tracking_save">{SAVE}</a>
 	</div>
 </div>
+</html>
