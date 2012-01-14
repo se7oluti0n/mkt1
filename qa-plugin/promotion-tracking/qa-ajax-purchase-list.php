@@ -4,6 +4,7 @@ require_once 'qa-tracking-config.php';
 // Register biz function
 $function_array = array(
 	'init' => array('func' => 'init_paging', 'args' => $params),
+	'load-content' => array('func' => 'load_content', 'args' => $params)
 );
 
 if (!do_tracking_request_process()) {
@@ -34,25 +35,6 @@ function init_paging(){
 												'options' => array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12))
 										);
 	
-	$promotion_list_html = '<tr>
-								<td width="20px">NO</td>
-								<td width="400px">PRODUCT_NAME</td>
-								<td width="100px">PRODUCT_EC_ID</td>
-							</tr>
-							<tr>
-								<td width="20px">NO</td>
-								<td width="400px">PRODUCT_NAME</td>
-								<td width="100px">PRODUCT_EC_ID</td>
-							</tr>
-							<tr>
-								<td width="20px">NO</td>
-								<td width="400px">PRODUCT_NAME</td>
-								<td width="100px">PRODUCT_EC_ID</td>
-							</tr>'; // create HTML code for promotion list here
-	
-	// then replace to replacing holder 
-	$analytics_template->set_data('purchase-list', '{PROMOTION_LIST_VAL}', $promotion_list_html);
-	
 	$analytics_template->set_data('purchase-list', '{PDF}', 'PDF');
 	$analytics_template->set_data('purchase-list', '{CSV}', 'CSV');
 	$analytics_template->set_data('purchase-list', '{REMUN_REPORT}', 'Remun report');
@@ -64,12 +46,64 @@ function init_paging(){
 	$analytics_template->set_data('purchase-list', '{PID}', 'PID');
 	$analytics_template->set_data('purchase-list', '{VIEW}', 'VIEW');
 		
-	$analytics_template->set_data('purchase-list', '{SAVE_CHANGE_BTN}', 'SAVE CHANGE');	
-	
 	$html = $analytics_template->get_html();	
 	echo $html; // return HTML code for analytics page
 }
 
+function load_content(){
+	global $qa_db;
+	$args = func_get_args();
+
+	$sample_param = $args[0]['sample_param']; // just show how to get parame
+
+	// Get template for the page
+	$analytics_template = template_factory::create('purchase/purchase-list-content');
+
+	$promotion_list_html = '<tr>
+								<td>NO</td>
+								<td>3453453546354633KH4</td>
+								<td>￥2345</td>
+								<td>￥2345</td>
+								<td>Prodld_units_price, Prodld_unit_price</td>
+								<td>user id</td>
+								<td>promotion id</td>
+								<td>promotion click time</td>
+								<td>buy time</td>
+								<td>Detail</td>
+							</tr>
+							<tr>
+								<td>NO</td>
+								<td>3453453546354633KH4</td>
+								<td>￥2345</td>
+								<td>￥2345</td>
+								<td>Prodld_units_price, Prodld_unit_price</td>
+								<td>user id</td>
+								<td>promotion id</td>
+								<td>promotion click time</td>
+								<td>buy time</td>
+								<td>Detail</td>
+							</tr>
+							<tr>
+								<td>NO</td>
+								<td>3453453546354633KH4</td>
+								<td>￥2345</td>
+								<td>￥2345</td>
+								<td>Prodld_units_price, Prodld_unit_price</td>
+								<td>user id</td>
+								<td>promotion id</td>
+								<td>promotion click time</td>
+								<td>buy time</td>
+								<td>Detail</td>
+							</tr>'; // create HTML code for promotion list here
+
+	// then replace to replacing holder
+	$analytics_template->set_data('purchase-list-content', '{PROMOTION_LIST_VAL}', $promotion_list_html);
+
+	$analytics_template->set_data('purchase-list-content', '{SAVE_CHANGE_BTN}', 'SAVE CHANGE');
+
+	$html = $analytics_template->get_html();
+	echo $html; // return HTML code for analytics page
+}
 /*-- /Bussiness functions (public use) --*/
 
 /*-- Private functions (local use) --*/
