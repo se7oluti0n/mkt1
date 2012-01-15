@@ -14,18 +14,13 @@
 		<table>
 			<tr>
 				<td>
-				<select id="seaching_time">
+				<select id="searching_time">
 					{SEARCHING_TIME}
 				</select></td>
 				<td><label id="start_date_lbl" for="start_date">{START_DATE}</label></td>
 				<td>
 				<input type="text" id="start_date">
 				</td>
-				<td><label id="year_lbl" for="year">{YEAR}</label></td>
-				<td>
-				<select id = "year">
-					{YEAR_VAL}
-				</select></td>
 				<td><label id="uid_lbl" for="uid">{UID}</label></td>
 				<td>
 				<input type="text" id="uid">
@@ -38,11 +33,6 @@
 				<td>
 				<input type="text" id="end_date">
 				</td>
-				<td><label id="month_lbl" for="month">{MONTH}</label></td>
-				<td>
-				<select id = "month">
-					{MONTH_VAL}
-				</select></td>
 				<td><label id="pid_lbl" for="pid">{PID}</label></td>
 				<td>
 				<input type="text" id="pid">
@@ -59,12 +49,42 @@
             showTime : true,
             stepMinutes : 1,
             stepHours : 1,
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            minDate: '2012-01-01',
+            maxDate: '{MAX_DATE}'
         });
         $("#end_date").datepicker({
             duration : '',
             showTime : true,
             stepMinutes : 1,
             stepHours : 1,
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true,
+            minDate: '2012-01-01',
+            maxDate: '{MAX_DATE}'
         });
     });
+    $('#start_date').datepicker("setDate", '+2m +3d');
+    //Event binder
+    $('#view').click(function() {
+        var cmd = "load-content";
+        $.get("qa-plugin/promotion-tracking/qa-ajax-purchase-list.php", 
+            {cmd : cmd, sample_param : 'nothing'}, function(data) {
+            	$('.qa-form-content').html(data);
+            }
+		);
+    });
+    
+    $('#searching_time').change(function() {
+    	$.get("qa-plugin/promotion-tracking/qa-ajax-purchase-list.php", 
+            {cmd : "max-date", type: this.value}, function(data) {
+                $("#start_date").datepicker("option", "maxDate", data);
+                $("#end_date").datepicker("option", "maxDate", data);
+            }
+		);
+	});
+
 </script>

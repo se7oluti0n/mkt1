@@ -34,3 +34,9 @@
 	<a id="save_change">{SAVE_CHANGE_BTN}</a>&nbsp;
 </div>
 <br/>
+
+<script>
+	$('#save_change').click(function(){
+        alert('You have clicked on me!');
+    })
+</script>
