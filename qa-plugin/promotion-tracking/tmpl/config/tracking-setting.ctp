@@ -1,10 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="tracking-setting.css" />
-		
-	</head>
-	<div class="qa-form-content" id="company_info">
+	<div class="qa-form-function-bar" style="height:345px;" id="company_info">
 		<div class="qa-form-function-item qa-lfloat">
 			<table>
 				<tr>
@@ -76,7 +72,7 @@
 				<tr >
 					<td><label id="memo_lbl" for="memo">{MEMO}</label></td>
 					<td colspan="4" >
-					<textarea  cols=80 id="memo" size="80"/>
+					<textarea  cols=80 id="memo" size="80" 	style="resize:none"/>
 					</td>
 				</tr>
 			</table>
@@ -88,7 +84,7 @@
 		
 	</div>
 	<br style="clear:both">
-	<div class="qa-form-content">
+	<div class="qa-form-function-bar" style="height:75px;">
 		<div class="qa-form-function-item qa-lfloat" id="qa_plan_type">
 			<table >
 				<tr>
@@ -113,7 +109,7 @@
 	</div>
 	
 	<br style="clear:both">
-	<div class="qa-form-content">
+	<div id="tracking" class="qa-form-function-bar" style="height:137px;">
 		<div class="qa-form-function-item qa-lfloat">
 			<table>
 				<tr>
@@ -133,7 +129,8 @@
 						{COOKIE_VAL}
 					</select></td>
 				</tr>
-				<tr>
+				<tr id="cookies" style="display:none">
+				<td></td>
 					<td COLSPAN=3>
 					<input type="radio" name="cookie_day"
 					id="cookie_3days" />

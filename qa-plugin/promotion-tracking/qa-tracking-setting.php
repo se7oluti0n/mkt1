@@ -33,7 +33,7 @@ class qa_tracking_setting {
 		$qa_content=qa_content_prepare();
 		$qa_content["script_rel"][] = 'qa-plugin/promotion-tracking/js/expand_qa_main.js';
 		$qa_content["script_rel"][] = 'qa-plugin/promotion-tracking/js/qa-tracking-setting.js';
-		$qa_content["custom"] = '<p>Welcome to tracking settings</p>';
+		//$qa_content["custom"] = '<p>Welcome to tracking settings</p>';
 		
 		return($qa_content);		
 	}
